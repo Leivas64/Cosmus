@@ -1,0 +1,255 @@
+@font-face {
+  font-family: 'Brother';
+  src: url('fonts\BROTHER\BROTHER-Bold.otf') format('otf'),
+       url('fonts\BROTHER\BROTHER-Bold.ttf') format('ttf');
+  font-weight: normal; /* ou bold, se for uma versão em negrito */
+  font-style: normal;  /* ou italic, se for uma versão itálica */
+}
+
+body {
+    font-weight: 100;
+    font-family: Blippo, fantasy;
+    font-size: 22px;
+    margin: 0;
+    background: url(imagens/homis3.jpg) no-repeat center;
+    max-width: 1920px;
+    max-height: 900px;
+    background-size: cover;
+    transition: background-color 1s ease, opacity 1s ease;
+    color: #ffffff;
+  }
+  body.scrolled {
+  
+    background: url(imagens/homis3.jpg) no-repeat center;
+    background-color: #000000;
+    background-size: cover;
+    background-blend-mode: none;
+    opacity: 0.9;
+}
+.bold-text {
+  font-weight:bolder;
+  color:#fc8904;
+}
+.sobre {
+  width: 80%; /* Largura da caixa */
+  border-color: #ffffff;
+  border-width: 3px;
+  border-style: solid;
+  max-width: 800px; /* Largura máxima */
+  margin: 50px auto; /* Centraliza a caixa */
+  padding: 20px; /* Espaçamento interno */
+  background-color: #000000; /* Cor de fundo */
+  border-radius: 10px; /* Bordas arredondadas */
+  text-align: left; /* Centraliza o texto */
+  font-family: 'Arial', sans-serif; /* Fonte */
+  color: #ffff; /* Cor do texto */
+}
+.home {
+    padding: 20px;
+    color: #ffffff;
+    font-family: Blippo, fantasy;
+    text-align: center;
+    margin-top: 80vh; /* Centralizar conteúdo */
+}
+h1 {
+  color: #fc8904;
+  
+    font-family: Blippo, fantasy;
+    text-align: center;
+}
+  .header {
+    font-family: Blippo, fantasy;
+    text-align: right;
+    margin-right: 50px;
+    text-justify: flex;
+}
+  .logo {
+    width: 90%;
+    height:100px;
+    display:flex;
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+.nav-menu ul {
+    font-family: Blippo, fantasy;
+    list-style: none;
+    display: right;
+    justify-content: center;
+    gap: 30px;
+
+  }
+  .nav-menu a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #fc8904;
+    transition: color 0.3s;
+    font-size: 22px;
+  }
+  nav {
+    display: center;
+    justify-content:center; /* Centraliza os itens */
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  nav:hover {
+    text-decoration: underline;
+    text-decoration-color: #ffffff;
+  }
+  .card {
+    margin-left: 20px;
+    padding: 2px;
+    background: #171717;
+    display: flex;
+    justify-content:flex;
+    align-items:end;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0px 0px 3px 1px #00000088;
+    cursor: pointer;
+  }
+  
+  .card .content {
+    border-radius: 5px;
+    background: #171717;
+    width: 186px;
+    height: 250px;
+    z-index: 1;
+    padding: 20px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .content::before {
+    opacity: 0;
+    transition: opacity 300ms;
+    content: " ";
+    display: block;
+    background: white;
+    width: 5px;
+    height: 50px;
+    position: absolute;
+    filter: blur(50px);
+    overflow: hidden;
+  }
+  
+  .card:hover .content::before {
+    opacity: 1;
+  }
+  
+  .card::before {
+    opacity: 0;
+    content: " ";
+    position: absolute;
+    display: block;
+    width: 80px;
+    height: 360px;
+    background: linear-gradient(#da0066, #fc8904);
+    transition: opacity 300ms;
+    animation: rotation_9018 8000ms infinite linear;
+    animation-play-state: paused;
+  }
+  
+  .card:hover::before {
+    opacity: 1;
+    animation-play-state: running;
+  }
+  
+  .card::after {
+    position: absolute;
+    content: " ";
+    display: block;
+    width: 250px;
+    height: 360px;
+    background: #17171733;
+    backdrop-filter: blur(50px);
+  }
+  
+  @keyframes rotation_9018 {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* From Uiverse.io by vinodjangid07 */ 
+.bookmarkBtn {
+  width: 100px;
+  height: 40px;
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.349);
+  background-color: rgb(12, 12, 12);
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+}
+
+.IconContainer {
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(to bottom, #fc8904, #ff8800);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 2;
+  transition-duration: 0.3s;
+}
+
+.icon {
+  border-radius: 1px;
+}
+
+.text {
+  height: 100%;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 1;
+  transition-duration: 0.3s;
+  font-size: 1.04em;
+}
+
+.bookmarkBtn:hover .IconContainer {
+  width: 90px;
+  transition-duration: 0.3s;
+}
+
+.bookmarkBtn:hover .text {
+  transform: translate(10px);
+  width: 0;
+  font-size: 0;
+  transition-duration: 0.3s;
+}
+
+.bookmarkBtn:active {
+  transform: scale(0.95);
+  transition-duration: 0.3s;
+}
+.footer {
+  background-color: #121212; /* Cor de fundo do rodapé */
+  color: white;             /* Cor do texto */
+  text-align: center;       /* Centraliza o texto */
+  padding: 20px;            /* Espaçamento interno */
+  font-size: 14px;          /* Tamanho do texto */
+}
+
+.footer-link {
+  text-decoration: none;
+  background-color: #121212; /* Cor de fundo do rodapé */
+  color: white;             /* Cor do texto */
+  text-align: center;       /* Centraliza o texto */
+  padding: 20px;            /* Espaçamento interno */
+  font-size: 14px;          /* Tamanho do texto */
+}
