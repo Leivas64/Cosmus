@@ -1,140 +1,212 @@
 @font-face {
   font-family: 'Brother';
   src: url('fonts\BROTHER\BROTHER-Bold.otf') format('otf'),
-       url('fonts\BROTHER\BROTHER-Bold.ttf') format('ttf');
-  font-weight: normal; /* ou bold, se for uma versão em negrito */
-  font-style: normal;  /* ou italic, se for uma versão itálica */
+    url('fonts\BROTHER\BROTHER-Bold.ttf') format('ttf');
+  font-weight: normal;
+  /* ou bold, se for uma versão em negrito */
+  font-style: normal;
+  /* ou italic, se for uma versão itálica */
 }
 
 body {
-    font-weight: 100;
-    font-family: Blippo, fantasy;
-    font-size: 22px;
-    margin: 0;
-    background: url(imagens/homis3.jpg) no-repeat center;
-    max-width: 1920px;
-    max-height: 900px;
-    background-size: cover;
-    transition: background-color 1s ease, opacity 1s ease;
-    color: #ffffff;
-    text-align: center;
-  }
-  body.scrolled {
-  
-    background: url(imagens/homis3.jpg) no-repeat center;
-    background-color: #000000;
-    background-size: cover;
-    background-blend-mode: none;
-    opacity: 0.9;
+  font-weight: 100;
+  font-family: Blippo, fantasy;
+  font-size: 22px;
+  margin: 0;
+  background: url(imagens/homis3.jpg) no-repeat center;
+  max-width: 1920px;
+  max-height: 900px;
+  background-size: cover;
+  transition: background-color 1s ease, opacity 1s ease;
+  color: #ffffff;
+  text-align: center;
 }
+
+body.scrolled {
+
+  background: url(imagens/homis3.jpg) no-repeat center;
+  background-color: #000000;
+  background-size: cover;
+  background-blend-mode: none;
+  opacity: 0.9;
+}
+
 .bold-text {
-  font-weight:bolder;
-  color:#fc8904;
+  font-weight: bolder;
+  color: #fc8904;
 }
+
 .sobre {
-  width: 80%; /* Largura da caixa */
+  width: 80%;
+  /* Largura da caixa */
   border-color: #ffffff;
   border-width: 3px;
-  border-style:ridge;
-  max-width: 800px; /* Largura máxima */
-  margin: 50px auto; /* Centraliza a caixa */
-  padding: 20px; /* Espaçamento interno */
-  background-color: #000000; /* Cor de fundo */
-  border-radius: 1px; /* Bordas arredondadas */
-  text-align: left; /* Centraliza o texto */
-  font-family: 'Arial', sans-serif; /* Fonte */
-  color: #ffff; /* Cor do texto */
+  border-style: ridge;
+  max-width: 800px;
+  /* Largura máxima */
+  margin: 50px auto;
+  /* Centraliza a caixa */
+  padding: 20px;
+  /* Espaçamento interno */
+  background-color: #000000;
+  /* Cor de fundo */
+  border-radius: 1px;
+  /* Bordas arredondadas */
+  text-align: left;
+  /* Centraliza o texto */
+  font-family: 'Arial', sans-serif;
+  /* Fonte */
+  color: #ffff;
+  /* Cor do texto */
 }
+
 .home {
-    padding: 20px;
-    color: #000000;
-    font-family: Blippo, fantasy;
-    text-align: center;
-    margin-top: 80vh; /* Centralizar conteúdo */
+  padding: 20px;
+  color: #000000;
+  font-family: Blippo, fantasy;
+  text-align: center;
+  margin-top: 80vh;
+  /* Centralizar conteúdo */
 }
-h1, h2 {
+
+h1,
+h2 {
   color: #fc8904;
   font-family: Blippo, fantasy;
   text-align: center;
 }
-  .logo {
-    width: 90%;
-    height:100px;
-    display:flex;
-    margin-top: 30px;
-    margin-left: 30px;
-  }
-  .header nav ul {
-    text-align: right;
-    display:list-item; /* Deixa os itens na horizontal */
-    margin-left: 20px;
-    margin-top: 0px;
-    margin: 15px; /* Espaçamento entre os itens */
-    list-style: none; /* Remove os marcadores de lista */
-  }
-  
-  .header nav ul a{
-    text-decoration: none; /* Remove o sublinhado dos links */
-    color: #000000; /* Cor do texto */
-    font-size: 32px; /* Tamanho da fonte */
-    transition: all 0.3s ease; /* Suaviza a transição */
-    position: relative; /* Necessário para o efeito do hover */
-  }
-  
-  .header nav ul a:hover, .header nav ul a.active {
-    color: #fc8904; /* Altera a cor do texto ao passar o mouse */
-    cursor: pointer;
-  }
-  
-  .header nav ul a::after {
-    content: ""; /* Cria o efeito decorativo */
-    display: block;
-    width: 0;
-    height: 2px;
-    background: #fc8904; /* Cor da linha decorativa */
-    transition: width 0.3s ease; /* Suaviza a expansão */
-    margin-left: 95% ; /* Centraliza a linha */
-  }
-  
-  .header nav ul a:hover::after, .header nav ul a.active::after {
-    width: 5%; /* A linha decorativa cresce até 100% da largura do link */
-  }
-  .card {
-    border: 1px solid #ddd;
-    
-    border-radius: 8px;
-    overflow: hidden;
-    text-align: justify;
-    box-shadow: 0 2px 4px #563C27;
-    transition: 0.3s;
-  }
-  .membros {
-    display: ;
-    
-  }
-  .card img {
-    width: 20%;
-    max-width: 200px;
-    object-fit: fill;
-  }
-  .card h2 {
-    color :#ffffff;
-    font-size: 22px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
+
+.logo {
+  width: 90%;
+  height: 100px;
+  display: flex;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.header nav ul {
+  text-align: right;
+  display: list-item;
+  /* Deixa os itens na horizontal */
+  margin-left: 20px;
+  margin-top: 0px;
+  margin: 15px;
+  /* Espaçamento entre os itens */
+  list-style: none;
+  /* Remove os marcadores de lista */
+}
+
+.header nav ul a {
+  text-decoration: none;
+  /* Remove o sublinhado dos links */
+  color: #000000;
+  /* Cor do texto */
+  font-size: 32px;
+  /* Tamanho da fonte */
+  transition: all 0.3s ease;
+  /* Suaviza a transição */
+  position: relative;
+  /* Necessário para o efeito do hover */
+}
+
+.header nav ul a:hover,
+.header nav ul a.active {
+  color: #fc8904;
+  /* Altera a cor do texto ao passar o mouse */
+  cursor: pointer;
+}
+
+.header nav ul a::after {
+  content: "";
+  /* Cria o efeito decorativo */
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #fc8904;
+  /* Cor da linha decorativa */
+  transition: width 0.3s ease;
+  /* Suaviza a expansão */
+  margin-left: 95%;
+  /* Centraliza a linha */
+}
+
+.header nav ul a:hover::after,
+.header nav ul a.active::after {
+  width: 5%;
+  /* A linha decorativa cresce até 100% da largura do link */
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  justify-content: center;
+  box-shadow: 0 2px 4px #563C27;
+  transition: 0.3s;
+  margin: 20px;
+  box-sizing: border-box; /* Inclui margens e bordas na largura total */
+  width: 500px; /* Define um limite máximo de largura */
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: center; /* Centraliza verticalmente */
+  text-align: center; /* Para alinhar o texto se necessário */
+  position: relative; /* Mantém flexibilidade para ajustes */
+}
+
+.conteiner {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 90%;
+  padding: 10px;
+}
+
+.card img {
+  width: 100%;
+  max-width: 500px;
+  height: auto; /* Mantém a proporção da imagem */
+  object-fit: cover; /* Ajusta a imagem para caber no card sem distorção */
+}
+.card:hover {
+  transform: translateY(-10px); /* Levanta o card */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4); /* Sombra mais forte */
+}
+.card:hover p {
+  color: #fc8904;
+  transition: ease-in 0.3s;
+  cursor: pointer;
+}
+.card:hover h4 {
+  color: #fc8904;
+  transition: ease-in 0.3s;
+}
+.card h2 {
+  color: #ffffff;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .bookmarkBtn {
   width: 100px;
   height: 40px;
   border-radius: 40px;
   border: 1px solid rgba(255, 255, 255, 0.349);
   background-color: rgb(12, 12, 12);
-  display:flex;
-  align-items:center;
+  display: flex;
+  align-items: center;
   justify-content: center;
   cursor: pointer;
   transition-duration: 0.3s;
   overflow: hidden;
+  margin-top: auto;
+  position: relative;
 }
+
 .IconContainer {
   width: 30px;
   height: 30px;
@@ -144,12 +216,15 @@ h1, h2 {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  z-index: 2;
+  z-index: 7;
   transition-duration: 0.3s;
+  position: relative;
 }
+
 .icon {
   border-radius: 1px;
 }
+
 .text {
   height: 100%;
   width: 60px;
@@ -161,37 +236,47 @@ h1, h2 {
   transition-duration: 0.3s;
   font-size: 1.04em;
 }
+
 .bookmarkBtn:hover .IconContainer {
   width: 90px;
   transition-duration: 0.3s;
 }
+
 .bookmarkBtn:hover .text {
   transform: translate(10px);
   width: 0;
   font-size: 0;
   transition-duration: 0.3s;
 }
+
 .bookmarkBtn:active {
   transform: scale(0.95);
   transition-duration: 0.3s;
 }
+
 .footer {
-  background-color: #121212; /* Cor de fundo do rodapé */
-  color: white;              /* Cor do texto */
-  text-align: center;         /* Centraliza o texto */
-  padding: 20px;              /* Espaçamento interno */
-  font-size: 14px;            /* Tamanho do texto */
+  background-color: #121212;
+  /* Cor de fundo do rodapé */
+  color: white;
+  /* Cor do texto */
+  text-align: center;
+  /* Centraliza o texto */
+  padding: 20px;
+  /* Espaçamento interno */
+  font-size: 14px;
+  /* Tamanho do texto */
 }
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
+
 .footer-link {
   text-decoration: none;
-  background-color: #121212; /* Cor de fundo do rodapé */
-  color: white;             /* Cor do texto */
-  text-align: center;       /* Centraliza o texto */
-  padding: 20px;            /* Espaçamento interno */
-  font-size: 14px;          /* Tamanho do texto */
+  background-color: #121212;
+  /* Cor de fundo do rodapé */
+  color: white;
+  /* Cor do texto */
+  text-align: center;
+  /* Centraliza o texto */
+  padding: 20px;
+  /* Espaçamento interno */
+  font-size: 14px;
+  /* Tamanho do texto */
 }
