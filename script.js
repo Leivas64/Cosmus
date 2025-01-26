@@ -13,7 +13,7 @@ function rudder() {
     window.open('https://distrokid.com/hyperfollow/cosmus3/rudder', '_blank');
 }
 function dance() {
-    window.open('')
+    window.open('https://offstep.link/622550476683')
 }
 function ninehundredninety() {
     window.open('https://distrokid.com/hyperfollow/cosmus3/990', '_blank');

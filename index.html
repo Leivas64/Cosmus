@@ -7,6 +7,9 @@
   <title>Banda Cosmus</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://cdn.jsdelivr.net/npm/line-awesome/dist/line-awesome/css/line-awesome.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -19,19 +22,22 @@
       <ul><a onclick="scrollar(2)">Sobre Nós</a></ul>
       <ul><a onclick="scrollar(3)">Músicas</a></ul>
       <ul><a onclick="scrollar(4)">Agenda</a></ul>
-      <ul><a onclick="scrollar(5)">Loja</a></ul>
+      <ul><a onclick="scrollar(5)">Galeria</a></ul>
+      <ul><a onclick="scrollar(6)">Loja</a></ul>
     </nav>
   </div>
   <div class="home">
     <h2> Ouça Rudder e outras agora mesmo na sua <span class="bold-text">plataforma preferida</span>!</h2>
-    <button onclick="rudder()" class="bookmarkBtn">
-      <span class="IconContainer">
-        <svg viewBox="0 0 384 512" height="1em" class="icon">
-          <i class="las la-music"></i>
-        </svg>
-      </span>
-      <p class="text">Ouça Agora!!</p>
-    </button>
+    <div class="butao">
+      <button onclick="rudder()" class="bookmarkBtn">
+        <span class="IconContainer">
+          <svg viewBox="0 0 384 512" height="1em" class="icon">
+            <i class="las la-music"></i>
+          </svg>
+        </span>
+        <p class="text">Ouça Agora!!</p>
+      </button>
+    </div>
   </div>
 
   <h1>Sobre Nós</h1>
@@ -100,14 +106,19 @@
 </section>
 
     <h1>Agenda</h1>
-  <section id="section4">
+   <section id="section4">
     <p>Nenhum show marcado no momento...</p>
   </section>
-
+</br>
   <section id="section5">
+    <h1>Galeria da Banda</h1>
+  </section>
+
+  <section id="section6">
     <h1>Loja</h1>
     <p>Nenhuma merch disponível no momento...</p>
   </section>
+</br>
   <p>Veja se você realmente conheçe a banda. Quem sabe você consiga um desconto em futuros produtos da banda!!</p>
   <a href="quizcosmus/quiz.html">Ver Quiz</a>
   <script src="script.js"></script>

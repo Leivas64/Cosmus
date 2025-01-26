@@ -1,16 +1,12 @@
-@font-face {
-  font-family: 'Brother';
-  src: url('fonts\BROTHER\BROTHER-Bold.otf') format('otf'),
-    url('fonts\BROTHER\BROTHER-Bold.ttf') format('ttf');
-  font-weight: normal;
-  /* ou bold, se for uma versão em negrito */
+.titan-one-regular {
+  font-family: "Titan One", serif;
+  font-weight: 400;
   font-style: normal;
-  /* ou italic, se for uma versão itálica */
 }
 
 body {
   font-weight: 100;
-  font-family: Blippo, fantasy;
+  font-family: "Titan One", serif;
   font-size: 22px;
   margin: 0;
   background: url(imagens/homis3.jpg) no-repeat center;
@@ -61,29 +57,38 @@ body.scrolled {
 }
 
 .home {
+  width: 97%;
   padding: 20px;
   color: #000000;
-  font-family: Blippo, fantasy;
+  font-family: "Titan One", serif;
   text-align: center;
   margin-top: 80vh;
   /* Centralizar conteúdo */
 }
 
-h1,
-h2 {
+h1 {
   color: #fc8904;
-  font-family: Blippo, fantasy;
+  font-family: "Titan One", serif;
   text-align: center;
 }
-
+h2 {
+  color: #ffff;
+  font-family: "Titan One", serif;
+  text-align: center;
+}
 .logo {
   width: 90%;
   height: 100px;
   display: flex;
   margin-top: 30px;
   margin-left: 30px;
+  cursor: pointer;
 }
-
+a {
+  color: #fc8904;
+  cursor: pointer;
+  text-decoration: none;
+}
 .header nav ul {
   text-align: right;
   display: list-item;
@@ -190,14 +195,19 @@ h2 {
   font-size: 20px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
+.butao {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
 .bookmarkBtn {
   width: 100px;
   height: 40px;
   border-radius: 40px;
   border: 1px solid rgba(255, 255, 255, 0.349);
   background-color: rgb(12, 12, 12);
-  display: flex;
+  display:flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
