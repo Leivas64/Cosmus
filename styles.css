@@ -145,17 +145,15 @@ a {
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
-  justify-content: center;
   box-shadow: 0 2px 4px #563C27;
   transition: 0.3s;
   margin: 20px;
   box-sizing: border-box; /* Inclui margens e bordas na largura total */
-  width: 500px; /* Define um limite máximo de largura */
+  width: 25%; /* Define um limite máximo de largura */
   padding: 10px;
   display: flex;
-  flex-direction: column;
+  flex-direction:column;
   align-items: center; /* Centraliza horizontalmente */
-  justify-content: center; /* Centraliza verticalmente */
   text-align: center; /* Para alinhar o texto se necessário */
   position: relative; /* Mantém flexibilidade para ajustes */
 }
@@ -163,11 +161,10 @@ a {
 .conteiner {
   margin: 20px;
   display: flex;
+  overflow:unset ;
   justify-content: center;
   gap: 30px;
-  max-width: 1400px;
-  margin: 0 auto;
-  width: 90%;
+  width: 1400px;
   padding: 10px;
 }
 
@@ -175,11 +172,29 @@ a {
   width: 100%;
   max-width: 500px;
   height: auto; /* Mantém a proporção da imagem */
+  display: block;
+  transition: opacity 0.3s ease-in-out;
   object-fit: cover; /* Ajusta a imagem para caber no card sem distorção */
 }
+
+.card img.hover {
+  display: none;
+  transition: opacity 0.3s ease-in-out;
+  transform: translateY(3px);
+}
+
+.card:hover img.default {
+  display: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
 .card:hover {
-  transform: translateY(-10px); /* Levanta o card */
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4); /* Sombra mais forte */
+  transform: translateY(-6px)
+}
+
+.card:hover img.hover {
+  display: block;
+  transition: opacity 0.3s ease-in;
 }
 .card:hover p {
   color: #fc8904;
