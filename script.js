@@ -3,7 +3,7 @@ const targetSection = document.getElementById('musicas');
 
   window.addEventListener('scroll', () => {
         const body = document.body;
-        if (window.scrollY > 180) {
+        if (window.scrollY > 100) {
             body.classList.add('scrolled');
         } else {
             body.classList.remove('scrolled');
