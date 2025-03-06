@@ -11,16 +11,14 @@
 
 @media (max-width: 768px) {
   .home {
-    background-image: url(imagens/homepage.jpg);
-    background-repeat: no-repeat;
-    background-size:contain;
-    width: 100%;
+    background: url(imagens/homepage.jpg) no-repeat center center/cover;
+    position:relative;
     height: 100vh;
+    width: 100%;
     font-family: "Titan One";
     font-weight: 100;
     font-size: 22px;
     margin: 0;
-    margin-top: 0;
   }
   
   .header nav ul {
@@ -34,6 +32,7 @@
     list-style: none;
     /* Remove os marcadores de lista */
   }
+
   .header nav ul a {
     text-decoration: none;
     /* Remove o sublinhado dos links */
@@ -138,7 +137,37 @@
     position: relative;
     /* Mantém flexibilidade para ajustes */
   }
+
+  .section5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   
+  .carrossel {
+    display: flex;
+    position: relative;
+    width: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .carrossel-container {
+    display: flex;
+    height: 60vh;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carrossel-container img {
+    flex-shrink: 0; /* Impede que as imagens encolham */
+    display: block; /* Remove espaços indesejados abaixo das imagens */
+    max-width: 100%; /* Garante que as imagens não ultrapassem a largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 10px;
+  }
+  
+
 .footer {
   width: 100%;
   background-color: #121212;
@@ -270,6 +299,36 @@
   /* Mantém flexibilidade para ajustes */
 }
 
+.section5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carrossel {
+  display: flex;
+  position: relative;
+  width: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carrossel-container {
+  display: flex;
+  height: 60vh;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carrossel-container img {
+  margin: 10px;
+  flex-shrink: 0; /* Impede que as imagens encolham */
+  display: block; /* Remove espaços indesejados abaixo das imagens */
+  max-width: 100%; /* Garante que as imagens não ultrapassem a largura do contêiner */
+  height: auto; /* Mantém a proporção da imagem */
+  border-radius: 10px;
+}
+
 
 .footer {
   width: 100%;
@@ -396,7 +455,6 @@ a {
 
 .card:hover img.hover {
   display: block;
-
   object-fit: cover;
   transition: opacity 0.3s ease-in;
 }
@@ -469,6 +527,55 @@ a {
   z-index: 1;
   transition-duration: 0.3s;
   font-size: 1.04em;
+}
+
+.carrossel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 24px;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+}
+
+.carrossel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.indicadores {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+}
+
+.indicadores .ponto {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.indicadores .ponto.ativo {
+  background-color: rgba(255, 255, 255, 1);
 }
 
 .bookmarkBtn:hover .IconContainer {
