@@ -38,7 +38,6 @@ function scrollar(sectionNumber) {
   let indiceAtual = 0;
   let touchInicioX = 0;
   let touchFimX = 0;
-  let intervaloTransicao; // Variável para armazenar o intervalo
   
   const carrosselContainer = document.querySelector('.carrossel-container');
   const imagens = document.querySelectorAll('.carrossel-container img');
@@ -55,16 +54,6 @@ function scrollar(sectionNumber) {
     });
   });
 
-  // Função para iniciar o intervalo de transição automática
-function iniciarIntervalo() {
-  intervaloTransicao = setInterval(() => moverCarrossel(1), 5000);
-}
-
-// Função para parar e reiniciar o intervalo
-function reiniciarIntervalo() {
-  clearInterval(intervaloTransicao); // Para o intervalo atual
-  iniciarIntervalo(); // Reinicia o intervalo
-}
   function moverCarrossel(direcao) {
     indiceAtual += direcao;
   
@@ -111,14 +100,10 @@ function reiniciarIntervalo() {
     const deltaX = touchFimX - touchInicioX;
     if (Math.abs(deltaX) > 50) { // Ajuste a sensibilidade do swipe
       if (deltaX < 0) {
-        moverCarrossel(1); // Deslizou para a esquerda
-        reiniciarIntervalo(); // Reinicia o intervalo
+        moverCarrossel(1); // Deslizou para a esquerda'
       } else if (deltaX > 0) {
         moverCarrossel(-1); // Deslizou para a direita
-        reiniciarIntervalo(); // Reinicia o intervalo
       }
     }
   });
   
-  // Intervalo de transição automática
-  setInterval(() => moverCarrossel(1), 5000);
