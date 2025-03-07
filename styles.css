@@ -11,10 +11,10 @@
 
 @media (max-width: 768px) {
   .home {
-    background: url(homepage.jpg) no-repeat center center/cover;
-    position:relative;
+    background: url(homepage.jpg) no-repeat center/cover;
+    position: relative;
     height: 100vh;
-    overflow-x: hidden;
+    
     width: 100%;
     font-family: "Titan One";
     font-weight: 100;
@@ -166,6 +166,8 @@
   
   .carrossel-container img {
     height:max-content;
+    scroll-snap-align: center;
+    object-fit: contain; /* Mantém a proporção da imagem */
     max-width: 100%; /* Garante que as imagens não ultrapassem a largura do contêiner */
     max-height: 60vh; /* Mantém a proporção da imagem */
     border-radius: 10px;
@@ -326,6 +328,8 @@
 
 .carrossel-container img {
   margin: 10px;
+  object-fit: contain; /* Mantém a proporção da imagem */
+  scroll-snap-align: center;
   flex-shrink: 0; /* Impede que as imagens encolham */
   display: block; /* Remove espaços indesejados abaixo das imagens */
   max-width: 100%; /* Garante que as imagens não ultrapassem a largura do contêiner */
