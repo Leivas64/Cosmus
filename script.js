@@ -5,7 +5,7 @@ const targetSection = document.getElementById('musicas');
         const body = document.body;
         if (window.scrollY > 100) {
             body.classList.add('scrolled');
-        } else {
+        } else if (window.scrollY < 30) {
             body.classList.remove('scrolled');
         }
     });
@@ -35,75 +35,64 @@ function scrollar(sectionNumber) {
       console.error(`Seção com ID '${sectionId}' não encontrada.`);
     }
   }
-  let indiceAtual = 0;
-  let touchInicioX = 0;
-  let touchFimX = 0;
-  
-  const carrosselContainer = document.querySelector('.carrossel-container');
-  const imagens = document.querySelectorAll('.carrossel-container img');
-  const indicadoresContainer = document.querySelector('.indicadores');
-  
-  // Array para armazenar a largura de cada imagem
-  const largurasDasImagens = [];
-  
-  // Calcula a largura de cada imagem e armazena no array
-  imagens.forEach((imagem) => {
-    imagem.addEventListener('load', () => {
-      largurasDasImagens.length = 0; // Limpa o array
-      imagens.forEach((img) => largurasDasImagens.push(img.clientWidth));
-    });
-  });
+  let slideIndex = 0;
 
-  function moverCarrossel(direcao) {
-    indiceAtual += direcao;
+  function mostrarSlide(n) {
+      const slides = document.querySelectorAll('.carrossel-container img');
+      const totalSlides = slides.length;
   
-    if (indiceAtual >= imagens.length) {
-      indiceAtual = 0;
-    } else if (indiceAtual < 0) {
-      indiceAtual = imagens.length - 1;
-    }
+      // Atualiza o índice do slide
+      slideIndex += n;
   
-    atualizarCarrossel();
-  }
-  
-  function moverParaImagem(index) {
-    indiceAtual = index;
-    atualizarCarrossel();
-  }
-  
-  function atualizarCarrossel() {
-    // Calcula o deslocamento com base na largura das imagens anteriores
-    let offset = 0;
-    for (let i = 0; i < indiceAtual; i++) {
-      offset += largurasDasImagens[i];
-    }
-  
-    // Aplica o deslocamento ao carrossel
-    carrosselContainer.style.transform = `translateX(-${offset}px)`;
-  
-    // Atualiza os indicadores
-    document.querySelectorAll('.indicadores .ponto').forEach((ponto, index) => {
-      ponto.classList.toggle('ativo', index === indiceAtual);
-    });
-  }
-  
-  // Navegação por toque (swipe)
-  carrosselContainer.addEventListener('touchstart', (e) => {
-    touchInicioX = e.touches[0].clientX;
-  });
-  
-  carrosselContainer.addEventListener('touchmove', (e) => {
-    touchFimX = e.touches[0].clientX;
-  });
-  
-  carrosselContainer.addEventListener('touchend', () => {
-    const deltaX = touchFimX - touchInicioX;
-    if (Math.abs(deltaX) > 50) { // Ajuste a sensibilidade do swipe
-      if (deltaX < 0) {
-        moverCarrossel(1); // Deslizou para a esquerda'
-      } else if (deltaX > 0) {
-        moverCarrossel(-1); // Deslizou para a direita
+      // Verifica se o índice está fora dos limites
+      if (slideIndex >= totalSlides) {
+          slideIndex = 0; // Volta para o primeiro slide
+      } else if (slideIndex < 0) {
+          slideIndex = totalSlides - 1; // Vai para o último slide
       }
-    }
-  });
   
+      // Move o container para mostrar o slide atual
+      const offset = -slideIndex * 100;
+      document.querySelector('.carrossel-container').style.transform = `translateX(${offset}%)`;
+  
+      // Atualiza os indicadores de slide (se houver)
+      atualizarIndicadores();
+  }
+  
+  // Função para atualizar os indicadores de slide
+  function atualizarIndicadores() {
+      const pontos = document.querySelectorAll('.indicadores .ponto');
+      pontos.forEach((ponto, index) => {
+          if (index === slideIndex) {
+              ponto.classList.add('ativo');
+          } else {
+              ponto.classList.remove('ativo');
+          }
+      });
+  }
+  
+  // Adiciona indicadores de slide dinamicamente
+  function criarIndicadores() {
+      const slides = document.querySelectorAll('.carrossel-container img');
+      const indicadoresContainer = document.querySelector('.indicadores');
+  
+      slides.forEach((_, index) => {
+          const ponto = document.createElement('div');
+          ponto.classList.add('ponto');
+          if (index === 0) ponto.classList.add('ativo'); // Primeiro ponto ativo
+          ponto.addEventListener('click', () => pularParaSlide(index));
+          indicadoresContainer.appendChild(ponto);
+      });
+  }
+  
+  // Função para pular para um slide específico
+  function pularParaSlide(index) {
+      slideIndex = index;
+      mostrarSlide(0); // Chama a função para atualizar o slide
+  }
+  
+  // Inicializa o carrossel
+  window.onload = () => {
+      criarIndicadores(); // Cria os indicadores de slide
+      mostrarSlide(0); // Exibe o primeiro slide
+  };

@@ -145,35 +145,6 @@
     align-items: center;
   }
   
-  .carrossel {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: auto;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .carrossel-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60vh;
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  .carrossel-container img {
-    height:max-content;
-    scroll-snap-align: center;
-    object-fit: contain; /* Mantém a proporção da imagem */
-    max-width: 100%; /* Garante que as imagens não ultrapassem a largura do contêiner */
-    max-height: 60vh; /* Mantém a proporção da imagem */
-    border-radius: 10px;
-  }
-  
-
 .footer {
   width: 100%;
   background-color: #121212;
@@ -207,9 +178,9 @@
     width: 100vw;
     height: 1050px;
     overflow-x: hidden;
-    background-size: contain;
+    background-size: cover;
     transition: background-color 1s ease, opacity 1s ease;
-    color: #ffffff;
+    color: #d1d1d1;
     text-align: center;
   }
   .logo {
@@ -310,33 +281,6 @@
   justify-content: center;
   align-items: center;
 }
-
-.carrossel {
-  display: flex;
-  position: relative;
-  width: auto;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.carrossel-container {
-  display: flex;
-  height: 60vh;
-  transition: transform 0.5s ease-in-out;
-}
-
-.carrossel-container img {
-  margin: 10px;
-  object-fit: contain; /* Mantém a proporção da imagem */
-  scroll-snap-align: center;
-  flex-shrink: 0; /* Impede que as imagens encolham */
-  display: block; /* Remove espaços indesejados abaixo das imagens */
-  max-width: 100%; /* Garante que as imagens não ultrapassem a largura do contêiner */
-  height: auto; /* Mantém a proporção da imagem */
-  border-radius: 10px;
-}
-
 
 .footer {
   width: 100%;
@@ -551,6 +495,34 @@ a {
   transition: background-color 0.3s ease;
   z-index: 10;
 }
+
+.carrossel {
+  display: flex;
+  position: relative;
+  width: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carrossel-container {
+  display: flex;
+  height: 50vh;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carrossel-container img {
+  margin: 0;
+  object-fit: contain; /* Mantém a proporção da imagem */
+  scroll-snap-align: center;
+  flex-shrink: 0; /* Impede que as imagens encolham */
+  display: block; /* Remove espaços indesejados abaixo das imagens */
+  max-width: 100%; /* Garante que as imagens não ultrapassem a largura do contêiner */
+  width: 100vw;
+  height: auto; /* Mantém a proporção da imagem */
+  border-radius: 10px;
+}
+
 
 .carrossel-btn:hover {
   background-color: rgba(0, 0, 0, 0.8);
